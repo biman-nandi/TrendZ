@@ -5,7 +5,7 @@ import { verified_Email_Template } from "../libs/VerifiedEmailTemplate.js";
 export const SendVerificationCode = async(email, verificationCode) => {
     try {
         const response = await transporter.sendMail({
-            from: `"Krira Team" <${process.env.SMTP_USER}>`, // sender address
+            from: `"TrenZ Team" <${process.env.SMTP_USER}>`, // sender address
             to: email, // list of recipients
             subject: "Verify your Email", // subject line
             text: "Verify your Email", // plain text body
@@ -21,7 +21,7 @@ export const SendVerificationCode = async(email, verificationCode) => {
 export const SendLoginEmail = async (email) => {
     try {
         const response = await transporter.sendMail({
-            from: `"Krira Team" <${process.env.SMTP_USER}>`, // sender address
+            from: `"TrenZ Team" <${process.env.SMTP_USER}>`, // sender address
             to: email, // list of recipients
             subject: "Your Email is Verified", // subject line
             text: "Your Email is Verified", // plain text body

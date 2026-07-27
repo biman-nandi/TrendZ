@@ -73,7 +73,7 @@ export function OtpPage() {
                     top-10
                 "
             >
-                KriRa
+                TrenZ
             </h1>
 
             <div className="h-fit sm:w-1/2 lg:w-1/4 p-5 lg:p-10 shadow-gray-500 shadow-lg rounded-2xl border border-gray-500">

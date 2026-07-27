@@ -447,7 +447,7 @@ export function Navbar(props) {
                             cursor-pointer
                         "
                     >
-                        KriRa
+                        TrenZ
                     </h1>
                 </Link>
 
