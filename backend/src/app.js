@@ -1,0 +1,39 @@
+import express from "express"
+import cors from "cors"
+import { authRouter } from "./routes/auth.routes.js"
+import cookieParser from "cookie-parser"
+import { productRoute } from "./routes/products.routes.js"
+
+const app = express()
+
+// Basic Configs
+app.use(express.json({limit: "16kb"}))
+app.use(express.urlencoded({extended: true, limit: "16kb"}))
+app.use(express.static('public'))
+
+// Basic Cors
+app.use(
+    cors({
+        origin: process.env.CORS_ORIGIN
+            ? process.env.CORS_ORIGIN.split(",")
+            : ["http://localhost:5173"],
+        credentials: true,
+        methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+        allowedHeaders: ["Content-Type", "Authorization"],
+    })
+);
+
+// Cookie Parser
+app.use(cookieParser())
+
+// Routes
+app.get('/api/home', (req, res) => {
+    res.send('hi')
+})
+
+app.use('/auth', authRouter)
+app.use('/products', productRoute)
+
+
+
+export default app

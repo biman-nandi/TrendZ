@@ -1,0 +1,37 @@
+@import url("https://db.onlinewebfonts.com/c/fc650de7c3b3af62825a0e743b69425f?family=Helvetica+Neue+LT+W05+55+Roman");
+
+body {
+    background-color: #EDF2F7;
+    font-family: "Helvetica Neue LT W05_55 Roman", Helvetica, sans-serif;
+}
+
+.swiper {
+  --swiper-theme-color: #000000;
+}
+
+@media (max-width: 768px) {
+  .swiper {
+    --swiper-navigation-size: 25px;
+  }
+}
+
+.addHoverEffect {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+
+.addHoverEffect::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 0%;
+  height: 3px;
+  background-color: #000000;
+  transition: all 0.3s ease-in-out;
+}
+
+.addHoverEffect:hover::after {
+  width: 100%;
+}
